@@ -1,0 +1,30 @@
+
+/* Сброс базовых отступов */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+html {
+    scroll-behavior: smooth;
+}
+:root {
+    --font-main: 'Bebas Neue', 'Oswald';
+
+}
+
+body {
+    font-family: var(--font-main);
+    background: #101010;
+    /* #800020 — вишнёвый (снизу), #000000 — чёрный (сверху) */
+    color: #ffffff;
+    line-height: 1.6;
+    min-height: 100vh; /* чтобы фон растягивался на всю высоту */
+    margin: 0;
+
+}
+::selection {
+    background: var(--color-button); /* цвет подсветки */
+    color: white; /* цвет текста внутри выделения */
+}

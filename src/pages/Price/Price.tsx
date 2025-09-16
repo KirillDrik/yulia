@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import "./Price.css";
 
+
+
 const Price: React.FC = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
 

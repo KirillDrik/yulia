@@ -4,6 +4,8 @@ import Layout from './components/Layout/Layout';
 import Home from './pages/Home/Home';
 import Price from './pages/Price/Price';
 
+import './styles/variables.css';   // переменные
+
 const App: React.FC = () => (
     <Routes>
         <Route path="/" element={<Layout><Home /></Layout>} />

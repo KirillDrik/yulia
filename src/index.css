@@ -28,3 +28,26 @@ body {
     background: var(--color-button); /* цвет подсветки */
     color: white; /* цвет текста внутри выделения */
 }
+
+/* сама полоска */
+::-webkit-scrollbar {
+    width: 10px; /* ширина скролла */
+}
+
+/* трек — фон */
+::-webkit-scrollbar-track {
+    background: var(--color-bg); /* фон под скроллом */
+    border-radius: 10px;
+}
+
+/* ползунок */
+::-webkit-scrollbar-thumb {
+    background: var(--color-button); /* цвет ползунка */
+    border-radius: 10px;
+    border: 2px solid var(--color-bg); /* чтобы было красиво */
+}
+
+/* при наведении */
+::-webkit-scrollbar-thumb:hover {
+    background: var(--color-text);
+}

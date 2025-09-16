@@ -1,10 +1,12 @@
 /* ---------- Глобальные переменные ---------- */
 :root {
     /* Цвета */
+    --color-bg: rgba(0, 0, 0, 0.7);
     --color-bg-hover: rgba(255, 255, 255, 0.2);
     --color-border: rgb(90, 92, 93);
     --color-text: #ffffff;
     --color-text-muted: #cccccc;
+    --color-button: #ff6f61;
 
     /* Эффекты */
     --blur: 10px;
@@ -17,11 +19,18 @@
     --spacing-vv: 15px;
 }
 
-/* ---------- Базовые стили ---------- */
+/* ---------- Базовый layout ---------- */
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
 main {
+    flex: 1; /* тянется на всё свободное место */
     padding-top: var(--header-height);
     color: var(--color-text);
-
 }
 
 /* ---------- Шапка ---------- */
@@ -36,8 +45,6 @@ main {
     color: var(--color-text);
     padding: var(--spacing-vv) 0;
     z-index: 1000;
-
-
 }
 
 .header .container {
@@ -50,15 +57,15 @@ main {
 }
 
 .header .logo {
-    font-size: 24px;
+    font-size: 50px;
     font-weight: bold;
     margin: 0;
-
 }
 
+/* ---------- Навигация ---------- */
 .header .nav-center {
+    display: none; /* по умолчанию скрыто */
     flex: 1;
-    display: flex;
     justify-content: center;
 }
 
@@ -83,7 +90,6 @@ main {
     transform: scale(1.2);
     color: var(--color-button);
     font-weight: bold;
-
 }
 
 .header .networks {
@@ -96,12 +102,12 @@ main {
     color: var(--color-text);
     font-size: 24px;
     transition: color var(--transition-fast);
+
 }
 
+.header .networks a:hover {
+    color: var(--color-button);
 
- .header .networks a:hover {
-     color: var(--color-button);
- /*   color: var(--color-text-muted); */
 
 }
 
@@ -111,4 +117,80 @@ main {
     color: var(--color-text);
     padding: 20px 0;
     text-align: center;
+    margin-top: auto; /* прижатие к низу */
+}
+
+/* ---------- Бургер ---------- */
+.burger {
+    display: none; /* по умолчанию скрыт */
+    flex-direction: column;
+    justify-content: space-between;
+    width: 25px;
+    height: 20px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1100;
+}
+.burger span {
+    display: block;
+    height: 3px;
+    width: 100%;
+    background: var(--color-text);
+    border-radius: 2px;
+    transition: all 0.3s;
+    transform-origin: center; /* чтобы вращение шло из центра */
+}
+
+.burger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(7px, 7px);
+}
+
+.burger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.burger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -6px);
+}
+
+/* ---------- Desktop ---------- */
+@media (min-width: 769px) {
+    .header .nav-center {
+        display: flex; /* на десктопе всегда видно */
+    }
+}
+
+/* ---------- Mobile ---------- */
+@media (max-width: 768px) {
+    .burger {
+        display: flex; /* бургер виден */
+    }
+
+    .header .nav-center {
+        position: absolute;
+        top: 110px;
+        left: 0;
+        right: 0;
+        background-color: var(--color-bg);
+        backdrop-filter: blur(var(--blur));
+        -webkit-backdrop-filter: blur(var(--blur));
+        color: var(--color-text);
+        flex-direction: column;
+        gap: 15px;
+        padding: 20px;
+    }
+
+    .header .nav-center.open {
+        display: flex; /* открывается при клике */
+        max-height: 500px; /* раскрытие (подбирай под размер меню) */
+        padding: 15px 20px;
+    }
+    .header .nav-center ul {
+        gap: 10px;
+    }
+    .networks {
+        display: none; /* можно спрятать */
+    }
 }

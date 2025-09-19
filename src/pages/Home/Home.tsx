@@ -27,7 +27,7 @@ const Home: React.FC = () => {
             {/* Контейнер тостов */}
             <ToastContainer
                 position="top-center"
-                autoClose={3000}
+                autoClose={2000}
                 theme="dark"
             />
         </>

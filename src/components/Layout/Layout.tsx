@@ -16,9 +16,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
         <div>
             <header className="header">
                 <div className="container">
-                    <div className="logo"><h1 className="logo">GRUSHNIK</h1></div>
-
-                    {/* Кнопка-бургер */}
+                    {/* Бургер-меню для мобильной версии */}
                     <button
                         className={`burger ${menuOpen ? "active" : ""}`}
                         onClick={() => setMenuOpen(!menuOpen)}
@@ -28,17 +26,21 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
                         <span></span>
                     </button>
 
-                    {/* Навигация */}
-                    <nav className={`nav-center ${menuOpen ? "open" : ""}`}>
+                    {/* Меню навигации */}
+                    <nav className={`nav-left ${menuOpen ? "open" : ""}`}>
                         <ul>
                             <li><Link to="/" onClick={() => setMenuOpen(false)}>ГЛАВНАЯ</Link></li>
                             <li><HashLink smooth to="/#gallery" onClick={() => setMenuOpen(false)}>ГАЛЕРЕЯ</HashLink></li>
-                            <li><Link to="/price" onClick={() => setMenuOpen(false)}>ЦЕНА</Link></li>
+                            <li><Link to="/price" onClick={() => setMenuOpen(false)}>ЦЕНЫ</Link></li>
                             <li><HashLink smooth to="/#about" onClick={() => setMenuOpen(false)}>ОБО МНЕ</HashLink></li>
                             <li><HashLink smooth to="/#contact" onClick={() => setMenuOpen(false)}>КОНТАКТЫ</HashLink></li>
                         </ul>
                     </nav>
 
+                    {/* Логотип по центру */}
+                    <div className="logo-center"><h1 className="logo">GRUSHNIK</h1></div>
+
+                    {/* Социальные сети */}
                     <div className="networks">
                         <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"><FaInstagram /></a>
                         <a href="https://facebook.com" target="_blank" rel="noopener noreferrer"><FaFacebook /></a>
@@ -51,7 +53,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
 
             <footer className="footer">
                 <div className="container">
-                    <p>© 2025 Grushnik</p>
+                    <p className="premium-underline">© 2025 Grushnik</p>
                 </div>
             </footer>
         </div>

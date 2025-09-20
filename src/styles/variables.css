@@ -1,0 +1,36 @@
+/* variables.css */
+
+/* ---------- Цвета ---------- */
+:root {
+    --color-bg: rgba(0, 0, 0, 0.32);
+    --color-bg-hover: rgba(255, 255, 255, 0.2);
+    --color-btn-border: #cbcbcb;
+    --color-button: rgba(108, 9, 27, 0.85);
+    --color-border: rgb(90, 92, 93);
+    --color-text: #e0eeee;
+    --color-text-muted: #ccc;
+
+    /* ---------- Эффекты ---------- */
+    --blur-small: 10px;
+    --blur-medium: 15px;
+    --blur-large: 20px;
+    --transition-fast: 0.3s;
+
+    /* ---------- Размеры ---------- */
+    --spacing-h: 20px;
+    --spacing-v: 100px;
+    --spacing-section: 60px;
+    --header-height: 100px;
+    --container-max: 1340px;
+
+    /* ---------- Шрифты ---------- */
+    --font-main: 'Bebas Neue', 'Oswald';
+    --font-size-h1: 48px;
+    --font-size-h2: 36px;
+    --font-size-h3: 24px;
+    --font-size-text: 19px;
+
+    /* ---------- Радиусы ---------- */
+    --btn-radius: 5px;
+    --card-radius: 15px;
+}

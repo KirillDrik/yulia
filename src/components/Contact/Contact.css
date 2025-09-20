@@ -1,0 +1,65 @@
+.contact .contact-card {
+    background-color: var(--color-bg);
+    backdrop-filter: blur(var(--blur-medium));
+    -webkit-backdrop-filter: blur(var(--blur-medium));
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: var(--card-radius);
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    max-width: 900px;
+    margin: 40px auto;
+    box-shadow: 0 4px 30px rgba(0,0,0,0.3);
+}
+
+.contact .contact-card h2 {
+    color: var(--color-text);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.contact .contact-card a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    text-decoration: none;
+    color: var(--color-text);
+    font-size: 19px;
+    padding: 15px 20px;
+    border-radius: 25px;
+    transition: all var(--transition-fast);
+    background-color: rgba(255, 255, 255, 0.1);
+    border:  1px solid rgba(255,255,255,0.2);
+    width: 180px;
+    height: 50px;
+    box-sizing: border-box;
+}
+
+.contact .contact-card a:hover {
+    background-color: var(--color-button);
+    transform: scale(1.05);
+}
+
+.phone-field {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 10px 20px;
+    border-radius: 25px;
+    color: var(--color-text);
+    font-size: 19px;
+    text-align: center;
+    font-family: var(--font-main);
+    transition: all var(--transition-fast);
+    border: 1px solid rgba(255,255,255,0.2);
+    width: 180px;
+    height: 50px;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+.phone-field:hover {
+    background-color: var(--color-button);
+    transform: scale(1.05);
+}

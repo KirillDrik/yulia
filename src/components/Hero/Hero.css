@@ -1,0 +1,63 @@
+/* Hero.css */
+.hero {
+    color: var(--color-text);
+    text-align: center;
+    padding: var(--spacing-v) var(--spacing-h);
+}
+
+.hero h2 {
+    font-size: var(--font-size-h1);
+    margin-bottom: 20px;
+}
+
+.container .logo-home {
+
+
+     width: 290px;
+    padding: 10px;
+}
+
+
+.hero p {
+    font-size: 24px;
+    margin-bottom: 30px;
+}
+
+.hero .btn {
+    /* Общие стили для кнопки, которые не меняются */
+    padding: 10px 20px;
+    text-decoration: none;
+    font-family: var(--font-main);
+    font-size: var(--font-size-text);
+    border-radius: var(--btn-radius);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+
+    /* Стили для мобильной версии (вишневая кнопка) */
+    background-color: var(--color-button);
+    color: var(--color-text);
+    border: 1px solid var(--color-button);
+}
+
+.hero .btn:hover {
+    /* На мобильной версии при наведении ничего не происходит */
+    /* Эти стили будут работать только на десктопе, когда они переопределены */
+}
+
+/* Медиа-запрос для десктопной версии */
+@media (min-width: 769px) {
+    .hero .btn {
+        /* Переопределяем стили для десктопа (прозрачная кнопка) */
+        background-color: transparent;
+        color: var(--color-btn-border);
+        border: 1px solid var(--color-btn-border);
+    }
+
+    .hero .btn:hover {
+        /* Стили при наведении на десктопе (становится вишневой) */
+        background-color: var(--color-button);
+        color: var(--color-text);
+        border: 1px solid var(--color-button);
+        transform: scale(0.96);
+    }
+}

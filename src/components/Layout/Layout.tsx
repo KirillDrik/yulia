@@ -38,7 +38,8 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
                     </nav>
 
                     {/* Логотип по центру */}
-                    <div className="logo-center"><h1 className="logo">GRUSHNIK</h1></div>
+                    { /*   <img className="logo-center" src="/images/grushnik-logo1.png" alt="Фотограф Юлия" />  */}
+                     <div className="logo-center"><h1 className="logo">YULIA GRUSHNIK</h1></div>
 
                     {/* Социальные сети */}
                     <div className="networks">

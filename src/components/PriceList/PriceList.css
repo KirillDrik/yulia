@@ -1,0 +1,101 @@
+/* src/components/PriceList.css */
+
+.price-list {
+    margin: 40px auto;
+    max-width: var(--container-max);
+    padding: 0 var(--spacing-h);
+}
+
+.filters {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 40px;
+    flex-wrap: wrap; /* Для мобильной адаптации */
+}
+
+.filter-btn {
+    background-color: transparent;
+    color: var(--color-text);
+    border: 1px solid var(--color-text-muted);
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    font-family: var(--font-main);
+    font-size: 20px;
+}
+
+.filter-btn:hover {
+    background-color: var(--color-button);
+    border-color: var(--color-button);
+}
+
+.filter-btn.active {
+    background-color: var(--color-button);
+    border-color: var(--color-button);
+    color: var(--color-text);
+    font-weight: bold;
+}
+
+.price-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.price-card {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.price-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.card-overlay-text {
+    font-size: 20px;
+    color: var(--color-text);
+    font-family: var(--font-main);
+    border: none;
+    background-color: transparent;
+    border-radius: var(--btn-radius);
+}
+
+
+
+
+.price-card:hover img {
+    transform: scale(1.1);
+    filter: brightness(80%);
+}
+
+.price-card:hover .card-overlay {
+    opacity: 1;
+}
+
+@media (max-width: 768px) {
+    .price-gallery {
+        grid-template-columns: 1fr; /* По одной колонке на мобильных */
+    }
+}

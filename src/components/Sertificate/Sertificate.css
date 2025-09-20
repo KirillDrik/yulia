@@ -1,0 +1,70 @@
+/* src/components/Sertificate.css */
+
+.sertif-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    width: 100%;
+    padding: 60px;
+    border-radius: 0;
+    background-color: var(--color-bg);
+    backdrop-filter: blur(var(--blur-large));
+    -webkit-backdrop-filter: blur(var(--blur-large));
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: inset 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+.sertif-text {
+    flex: 1;
+    color: var(--color-text);
+}
+.sertif-text h2 {
+    font-size: var(--font-size-h2);
+    margin-bottom: 20px;
+}
+.sertif-text p {
+    font-size: 20px;
+    line-height: 1.6;
+}
+.sertif-photo {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+.sertif-photo img {
+    max-width: 90%;
+    border-radius: var(--card-radius);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+}
+
+.sertif-image:hover img {
+    transform: scale(1.1);
+    filter: brightness(70%);
+}
+
+.sertif-image:hover .overlay {
+    opacity: 1;
+}
+
+@media (max-width: 768px) {
+    .sertif-card {
+        flex-direction: column;
+        padding: 30px 20px;
+        text-align: center;
+    }
+
+    .sertif-text h2 {
+        font-size: 24px;
+    }
+
+    .sertif-text p {
+        font-size: 16px;
+    }
+
+    .sertif-photo img {
+        max-width: 80%;
+        margin-top: 20px;
+    }
+}
